@@ -8,53 +8,63 @@
 
 @layer base {
   :root {
+    /* Base */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
+    /* Surfaces */
     --card: 240 10% 8%;
     --card-foreground: 0 0% 98%;
 
     --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 280 100% 60%;
+    /* 🎯 PRIMARY — AZUL */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
+    /* Secondary (ciano vibrante) */
     --secondary: 190 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
+    /* Muted */
     --muted: 240 10% 15%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 330 100% 60%;
+    /* Accent (indigo / azul elétrico) */
+    --accent: 262 83% 58%;
     --accent-foreground: 0 0% 100%;
 
+    /* Destructive */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
+    /* Borders & Inputs */
     --border: 240 10% 20%;
     --input: 240 10% 20%;
-    --ring: 280 100% 60%;
+    --ring: 217 91% 60%;
 
+    /* Radius */
     --radius: 0.75rem;
 
-    /* Custom gradient colors */
-    --gradient-start: 280 100% 60%;
-    --gradient-mid: 310 100% 55%;
-    --gradient-end: 190 100% 50%;
+    /* 🌈 Gradients */
+    --gradient-start: 217 91% 60%; /* azul */
+    --gradient-mid: 199 89% 48%;   /* azul-ciano */
+    --gradient-end: 190 100% 50%;  /* ciano */
 
-    /* Glow effects */
-    --glow-primary: 280 100% 60%;
-    --glow-accent: 330 100% 60%;
+    /* ✨ Glow */
+    --glow-primary: 217 91% 60%;
+    --glow-accent: 262 83% 58%;
 
+    /* Sidebar */
     --sidebar-background: 240 10% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 280 100% 60%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 10% 15%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 10% 20%;
-    --sidebar-ring: 280 100% 60%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -69,6 +79,7 @@
 }
 
 @layer utilities {
+  /* 🌈 Background gradient */
   .gradient-primary {
     background: linear-gradient(
       135deg,
@@ -78,6 +89,7 @@
     );
   }
 
+  /* 🌈 Gradient text */
   .gradient-text {
     background: linear-gradient(
       135deg,
@@ -90,21 +102,28 @@
     background-clip: text;
   }
 
+  /* ✨ Glow primary */
   .glow-primary {
-    box-shadow: 0 0 40px hsl(var(--glow-primary) / 0.4),
-                0 0 80px hsl(var(--glow-primary) / 0.2);
+    box-shadow:
+      0 0 40px hsl(var(--glow-primary) / 0.4),
+      0 0 80px hsl(var(--glow-primary) / 0.2);
   }
 
+  /* ✨ Glow accent */
   .glow-accent {
-    box-shadow: 0 0 40px hsl(var(--glow-accent) / 0.4),
-                0 0 80px hsl(var(--glow-accent) / 0.2);
+    box-shadow:
+      0 0 40px hsl(var(--glow-accent) / 0.4),
+      0 0 80px hsl(var(--glow-accent) / 0.2);
   }
 
+  /* 🧩 Card glow */
   .card-glow {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.15),
-                0 4px 20px hsl(0 0% 0% / 0.4);
+    box-shadow:
+      0 0 30px hsl(var(--primary) / 0.15),
+      0 4px 20px hsl(0 0% 0% / 0.4);
   }
 
+  /* 🔤 Text glow */
   .text-glow {
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }

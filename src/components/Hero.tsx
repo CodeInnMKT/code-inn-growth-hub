@@ -26,13 +26,24 @@ const Hero = ({ onScrollToPlans }: HeroProps) => {
       />
 
       <div className="container relative z-10 max-w-6xl mx-auto text-center">
-        {/* Logo/Brand */}
-        <div className="mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+      {/* Logo/Brand */}
+        <div
+          className="mb-8 flex flex-col items-center justify-center gap-4 opacity-0 animate-fade-in"
+          style={{ animationDelay: "0.1s" }}
+        >
+          <img
+            src="/Logo2.png"
+            alt="Code Inn Marketing"
+            className="h-80 w-auto object-contain select-none"
+            draggable={false}
+          />
+
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             Agência de Resultados
           </span>
         </div>
+
 
         {/* Main headline */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>

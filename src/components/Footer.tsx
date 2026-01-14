@@ -36,17 +36,17 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="tel:+5511999999999" 
+                  href="tel:+5548991810815" 
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
                   <Phone className="h-4 w-4" />
-                  (11) 99999-9999
+                  (48) 99181-0815
                 </a>
               </li>
               <li>
                 <span className="flex items-center gap-2 text-muted-foreground text-sm">
                   <MapPin className="h-4 w-4" />
-                  São Paulo, SP - Brasil
+                  Itapema, SC - Brasil
                 </span>
               </li>
             </ul>
@@ -57,7 +57,7 @@ const Footer = () => {
             <h4 className="font-semibold text-lg">Redes Sociais</h4>
             <div className="flex gap-4">
               <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/codeinnmkt" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
@@ -65,15 +65,7 @@ const Footer = () => {
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
+           
             </div>
           </div>
         </div>
@@ -83,14 +75,7 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {currentYear} Code Inn Marketing. Todos os direitos reservados.
           </p>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              Política de Privacidade
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              Termos de Uso
-            </a>
-          </div>
+        
         </div>
       </div>
     </footer>

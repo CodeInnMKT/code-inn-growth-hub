@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 2160" width="4096" height="2160">
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 500px;fill: #0c6fb7;font-weight: 100;font-family: "Montserrat-Bold", "Montserrat" } 
+		.t1 { font-size: 500px;fill: #ffffff;font-weight: 100;font-family: "Montserrat-Bold", "Montserrat" } 
+	</style>
+	<text id="Code Inn" style="transform: matrix(1,0,0,1,886,751)" >
+		<tspan x="0" y="371" class="t0">C</tspan><tspan  y="371" class="t0">o</tspan><tspan  y="371" class="t0">d</tspan><tspan  y="371" class="t0">e</tspan><tspan  y="371" class="t0"> </tspan><tspan  y="371" class="t1">I</tspan><tspan  y="371" class="t1">n</tspan><tspan  y="371" class="t1">n
+</tspan>
+	</text>
+</svg>
