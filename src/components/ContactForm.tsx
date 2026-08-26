@@ -126,13 +126,13 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(({ selectedPlan
       <div className="container max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-            Agende sua Reunião
+            Prefere formulário?
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
-            Vamos conversar sobre <span className="gradient-text">seus objetivos</span>
+            Se preferir, <span className="gradient-text">me chame por aqui</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Preencha o formulário e nossa equipe entrará em contato para agendar uma reunião estratégica
+            Preencha seus dados e eu te respondo pelo WhatsApp ou e-mail com um orçamento.
           </p>
         </div>
 
@@ -140,12 +140,12 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(({ selectedPlan
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-xl">
               <Calendar className="h-5 w-5 text-primary" />
-              Agendar Reunião
+              Pedir orçamento
             </CardTitle>
             <CardDescription>
               {selectedPlan
-                ? `Você selecionou o plano ${selectedPlan}. Preencha seus dados para agendar.`
-                : "Preencha o formulário e escolha seu plano preferido."}
+                ? `Você selecionou o plano ${selectedPlan}. Preencha seus dados para eu entrar em contato.`
+                : "Preencha o formulário e escolha o plano de interesse."}
             </CardDescription>
           </CardHeader>
 
@@ -202,7 +202,7 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(({ selectedPlan
                 <div className="space-y-2">
                   <Label htmlFor="company" className="flex items-center gap-2">
                     <Building2 className="h-4 w-4 text-muted-foreground" />
-                    Empresa
+                    Nome do negócio
                   </Label>
                   <Input
                     id="company"
@@ -219,9 +219,10 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(({ selectedPlan
                       <SelectValue placeholder="Selecione um plano" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Essencial">Essencial</SelectItem>
-                      <SelectItem value="Crescimento">Crescimento</SelectItem>
-                      <SelectItem value="Aceleração">Aceleração</SelectItem>
+                      <SelectItem value="Landing Page">Landing Page — R$ 997</SelectItem>
+                      <SelectItem value="Site Institucional">Site Institucional — R$ 1.997</SelectItem>
+                      <SelectItem value="Site + Funcionalidades">Site + Funcionalidades — R$ 3.000</SelectItem>
+                      <SelectItem value="Ainda não sei">Ainda não sei / quero orientação</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -260,7 +261,7 @@ const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(({ selectedPlan
                 className="w-full gradient-primary glow-primary"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Enviando..." : "Enviar e Agendar Reunião"}
+                {isSubmitting ? "Enviando..." : "Enviar pedido de orçamento"}
                 <Send className="ml-2 h-5 w-5" />
               </Button>
             </form>

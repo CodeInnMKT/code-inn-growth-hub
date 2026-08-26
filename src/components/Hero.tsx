@@ -1,11 +1,12 @@
-import { ArrowRight, BarChart3, ShoppingCart, Database } from "lucide-react";
+import { ArrowRight, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 interface HeroProps {
-  onScrollToPlans: () => void;
+  onScrollToPortfolio: () => void;
 }
 
-const Hero = ({ onScrollToPlans }: HeroProps) => {
+const Hero = ({ onScrollToPortfolio }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
       {/* Background effects */}
@@ -16,7 +17,7 @@ const Hero = ({ onScrollToPlans }: HeroProps) => {
       </div>
 
       {/* Grid pattern overlay */}
-      <div 
+      <div
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
@@ -26,7 +27,7 @@ const Hero = ({ onScrollToPlans }: HeroProps) => {
       />
 
       <div className="container relative z-10 max-w-6xl mx-auto text-center">
-      {/* Logo/Brand */}
+        {/* Logo/Brand */}
         <div
           className="mb-8 flex flex-col items-center justify-center gap-4 opacity-0 animate-fade-in"
           style={{ animationDelay: "0.1s" }}
@@ -34,63 +35,54 @@ const Hero = ({ onScrollToPlans }: HeroProps) => {
           <img
             src="/Logo2.png"
             alt="Code Inn Marketing"
-            className="h-80 w-auto object-contain select-none"
+            className="h-40 sm:h-56 w-auto object-contain select-none"
             draggable={false}
           />
 
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Agência de Resultados
+            <MapPin className="h-4 w-4" />
+            Florianópolis, São José, Palhoça e Biguaçu
           </span>
         </div>
 
-
         {/* Main headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          Transformamos dados em{" "}
-          <span className="gradient-text">resultados reais</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          Transformo suas avaliações no Google em{" "}
+          <span className="gradient-text">clientes novos</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          E-commerce, Marketing Digital e Estratégia de Dados para{" "}
-          <span className="text-foreground font-medium">acelerar o crescimento</span> do seu negócio
+          Você já tem nota alta no Google e clientela fiel. Só falta um site
+          profissional pra quem te procura na internet{" "}
+          <span className="text-foreground font-medium">te encontrar antes da concorrência</span>.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-          <Button 
-            size="lg" 
-            onClick={onScrollToPlans}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <Button
+            asChild
+            size="lg"
             className="gradient-primary text-lg px-8 py-6 glow-primary hover:scale-105 transition-transform"
           >
-            Agende uma Reunião
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <a
+              href={getWhatsAppLink("Olá! Vi o site e quero saber mais sobre criar meu site.")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Falar no WhatsApp
+            </a>
           </Button>
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
-            onClick={onScrollToPlans}
+            onClick={onScrollToPortfolio}
             className="text-lg px-8 py-6 border-primary/50 hover:bg-primary/10 hover:scale-105 transition-transform"
           >
-            Ver Planos
+            Ver exemplos
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-        </div>
-
-        {/* Feature pills */}
-        <div className="flex flex-wrap justify-center gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
-            <ShoppingCart className="h-4 w-4 text-primary" />
-            <span className="text-sm">E-commerce</span>
-          </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
-            <BarChart3 className="h-4 w-4 text-secondary" />
-            <span className="text-sm">Marketing Digital</span>
-          </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
-            <Database className="h-4 w-4 text-accent" />
-            <span className="text-sm">Estratégia de Dados</span>
-          </div>
         </div>
       </div>
 

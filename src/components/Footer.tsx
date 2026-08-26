@@ -1,4 +1,5 @@
-import { Mail, Phone, Instagram, Linkedin, MapPin } from "lucide-react";
+import { Mail, Instagram, MapPin, MessageCircle } from "lucide-react";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,8 +17,8 @@ const Footer = () => {
               Code Inn Marketing
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Transformamos dados em resultados reais. Somos especialistas em e-commerce, 
-              marketing digital e estratégia de dados para acelerar o crescimento do seu negócio.
+              Criação de sites profissionais e landing pages para negócios locais que já são
+              bons, mas ainda não aparecem online. Atendimento direto, sem intermediários.
             </p>
           </div>
 
@@ -26,8 +27,19 @@ const Footer = () => {
             <h4 className="font-semibold text-lg">Contato</h4>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="mailto:contato@codeinnmarketing.com" 
+                <a
+                  href={getWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  (48) 99181-0815 — WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contato@codeinnmarketing.com"
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
                   <Mail className="h-4 w-4" />
@@ -35,18 +47,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="tel:+5548991810815" 
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  <Phone className="h-4 w-4" />
-                  (48) 99181-0815
-                </a>
-              </li>
-              <li>
                 <span className="flex items-center gap-2 text-muted-foreground text-sm">
                   <MapPin className="h-4 w-4" />
-                  Itapema, SC - Brasil
+                  Av. Trompowsky, Florianópolis - SC
                 </span>
               </li>
             </ul>
@@ -56,16 +59,24 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a 
-                href="https://instagram.com/codeinnmkt" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/codeinnmkt"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
-           
+              <a
+                href={getWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
@@ -75,7 +86,6 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {currentYear} Code Inn Marketing. Todos os direitos reservados.
           </p>
-        
         </div>
       </div>
     </footer>

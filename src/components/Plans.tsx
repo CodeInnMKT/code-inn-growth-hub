@@ -8,45 +8,42 @@ interface PlansProps {
 
 const plans = [
   {
-    name: "Essencial",
-    description: "Para quem está começando e quer dar os primeiros passos",
-    price: "A definir",
+    name: "Landing Page",
+    description: "Pra quem quer sair do zero e ter uma presença profissional rápido",
+    price: "R$ 997",
     featured: false,
     features: [
-      "Análise inicial do negócio",
-      "Estratégia básica de marketing",
-      "Relatórios mensais",
-      "Suporte por email",
-      "1 reunião mensal de acompanhamento",
+      "1 página, direto ao ponto",
+      "Seção de serviços e diferenciais",
+      "Botão de WhatsApp em destaque",
+      "Otimizado pra celular",
+      "Domínio e hospedagem configurados",
     ],
   },
   {
-    name: "Crescimento",
-    description: "Para empresas em expansão que querem acelerar resultados",
-    price: "A definir",
+    name: "Site Institucional",
+    description: "O mais escolhido: um site completo pra sua empresa aparecer online",
+    price: "R$ 1.997",
     featured: true,
     features: [
-      "Tudo do plano Essencial",
-      "Gestão completa de campanhas",
-      "Dashboard personalizado",
-      "Suporte prioritário",
-      "2 reuniões mensais",
-      "Otimização de e-commerce",
+      "Até 5 páginas (Home, Sobre, Serviços, Depoimentos, Contato)",
+      "Formulário de contato",
+      "Localização integrada com Google Maps",
+      "SEO local básico (aparecer nas buscas da sua região)",
+      "Botão de WhatsApp flutuante",
     ],
   },
   {
-    name: "Aceleração",
-    description: "Solução completa para escalar e dominar seu mercado",
-    price: "A definir",
+    name: "Site + Funcionalidades",
+    description: "Pra quem quer automatizar parte do atendimento no próprio site",
+    price: "R$ 3.000",
     featured: false,
     features: [
-      "Tudo do plano Crescimento",
-      "Estratégia omnichannel",
-      "Business Intelligence avançado",
-      "Consultoria dedicada",
-      "Reuniões semanais",
-      "Integração completa de dados",
-      "Suporte 24/7",
+      "Tudo do Site Institucional",
+      "Agendamento online integrado",
+      "Galeria de fotos / portfólio de trabalhos",
+      "Integração com Instagram",
+      "Suporte estendido no lançamento",
     ],
   },
 ];
@@ -62,25 +59,25 @@ const Plans = ({ onSelectPlan }: PlansProps) => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
-            Nossos Planos
+            Investimento
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
-            Escolha o plano ideal para{" "}
-            <span className="gradient-text">seu momento</span>
+            Escolha o site ideal pra{" "}
+            <span className="gradient-text">o seu negócio</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Planos flexíveis que crescem com o seu negócio
+            Preço fechado, sem letra miúda. Valores podem variar um pouco conforme o escopo — confirme no WhatsApp.
           </p>
         </div>
 
         {/* Plan cards */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {plans.map((plan, index) => (
-            <Card 
+            <Card
               key={plan.name}
               className={`relative bg-card/50 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 opacity-0 animate-fade-in-up ${
-                plan.featured 
-                  ? "border-primary glow-primary md:scale-105" 
+                plan.featured
+                  ? "border-primary glow-primary md:scale-105"
                   : "border-border hover:border-primary/50"
               }`}
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
@@ -90,11 +87,11 @@ const Plans = ({ onSelectPlan }: PlansProps) => {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1 px-4 py-1 rounded-full gradient-primary text-sm font-medium text-white">
                     <Sparkles className="h-3 w-3" />
-                    Mais Popular
+                    Mais Escolhido
                   </span>
                 </div>
               )}
-              
+
               <CardHeader className="text-center pb-4 pt-8">
                 <CardTitle className="text-2xl font-display">{plan.name}</CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -104,7 +101,7 @@ const Plans = ({ onSelectPlan }: PlansProps) => {
                   <span className="text-3xl font-bold gradient-text">{plan.price}</span>
                 </div>
               </CardHeader>
-              
+
               <CardContent className="pb-8">
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature) => (
@@ -114,17 +111,17 @@ const Plans = ({ onSelectPlan }: PlansProps) => {
                     </li>
                   ))}
                 </ul>
-                
-                <Button 
+
+                <Button
                   onClick={() => onSelectPlan(plan.name)}
                   className={`w-full ${
-                    plan.featured 
-                      ? "gradient-primary hover:opacity-90" 
+                    plan.featured
+                      ? "gradient-primary hover:opacity-90"
                       : "bg-muted hover:bg-muted/80"
                   } transition-all hover:scale-105`}
                   size="lg"
                 >
-                  Selecionar Plano
+                  Quero esse plano
                 </Button>
               </CardContent>
             </Card>
