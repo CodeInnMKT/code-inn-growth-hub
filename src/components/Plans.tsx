@@ -10,41 +10,53 @@ const plans = [
   {
     name: "Landing Page",
     description: "Pra quem quer sair do zero e ter uma presença profissional rápido",
+    priceLabel: "",
     price: "R$ 997",
     featured: false,
     features: [
-      "1 página, direto ao ponto",
+      "1 página profissional",
+      "Design responsivo",
       "Seção de serviços e diferenciais",
-      "Botão de WhatsApp em destaque",
-      "Otimizado pra celular",
-      "Domínio e hospedagem configurados",
+      "CTA para WhatsApp",
+      "Formulário de contato",
+      "SEO básico",
+      "Domínio e hospedagem configurados (custo à parte, por conta do cliente)",
+      "Até 2 rodadas de ajustes",
     ],
   },
   {
     name: "Site Institucional",
     description: "O mais escolhido: um site completo pra sua empresa aparecer online",
+    priceLabel: "",
     price: "R$ 1.997",
     featured: true,
     features: [
-      "Até 5 páginas (Home, Sobre, Serviços, Depoimentos, Contato)",
+      "Até 5 páginas (Home, Sobre, Serviços, Depoimentos e Contato)",
       "Formulário de contato",
       "Localização integrada com Google Maps",
-      "SEO local básico (aparecer nas buscas da sua região)",
       "Botão de WhatsApp flutuante",
+      "SEO básico para melhorar a indexação e presença local",
+      "Design responsivo",
+      "Domínio e hospedagem configurados (custo à parte, por conta do cliente)",
+      "Até 2 rodadas de ajustes",
     ],
   },
   {
     name: "Site + Funcionalidades",
-    description: "Pra quem quer automatizar parte do atendimento no próprio site",
-    price: "R$ 3.000",
+    description: "Pra quem quer transformar o site em uma ferramenta de atendimento",
+    priceLabel: "A partir de",
+    price: "R$ 2.997",
     featured: false,
     features: [
       "Tudo do Site Institucional",
-      "Agendamento online integrado",
+      "1 integração de agendamento (WhatsApp, Calendly ou sistema já usado por você)",
       "Galeria de fotos / portfólio de trabalhos",
       "Integração com Instagram",
-      "Suporte estendido no lançamento",
+      "Formulários personalizados",
+      "Analytics",
+      "Suporte pós-lançamento por 30 dias",
     ],
+    note: "Funcionalidades adicionais: orçamento conforme escopo.",
   },
 ];
 
@@ -98,12 +110,15 @@ const Plans = ({ onSelectPlan }: PlansProps) => {
                   {plan.description}
                 </CardDescription>
                 <div className="mt-4">
+                  {plan.priceLabel && (
+                    <span className="block text-sm text-muted-foreground mb-1">{plan.priceLabel}</span>
+                  )}
                   <span className="text-3xl font-bold gradient-text">{plan.price}</span>
                 </div>
               </CardHeader>
 
               <CardContent className="pb-8">
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-4">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
                       <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -111,6 +126,10 @@ const Plans = ({ onSelectPlan }: PlansProps) => {
                     </li>
                   ))}
                 </ul>
+
+                {plan.note && (
+                  <p className="text-xs text-muted-foreground mb-4">{plan.note}</p>
+                )}
 
                 <Button
                   onClick={() => onSelectPlan(plan.name)}
