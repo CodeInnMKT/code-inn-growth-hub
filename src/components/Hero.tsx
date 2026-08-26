@@ -1,12 +1,8 @@
-import { ArrowRight, MapPin, MessageCircle } from "lucide-react";
+import { MessageCircle, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppLink } from "@/lib/whatsapp";
 
-interface HeroProps {
-  onScrollToPortfolio: () => void;
-}
-
-const Hero = ({ onScrollToPortfolio }: HeroProps) => {
+const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
       {/* Background effects */}
@@ -73,15 +69,6 @@ const Hero = ({ onScrollToPortfolio }: HeroProps) => {
               <MessageCircle className="mr-2 h-5 w-5" />
               Falar no WhatsApp
             </a>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={onScrollToPortfolio}
-            className="text-lg px-8 py-6 border-primary/50 hover:bg-primary/10 hover:scale-105 transition-transform"
-          >
-            Ver exemplos
-            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>
